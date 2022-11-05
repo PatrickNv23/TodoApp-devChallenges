@@ -1,0 +1,7 @@
+.containerTaskCard {
+  display: flex;
+}
+
+.textContentTask {
+  text-decoration: line-through;
+}
