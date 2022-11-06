@@ -5,9 +5,6 @@ import CompletedTaskCard from './CompletedTaskCard.jsx';
 export default function TaskList() {
   const { tasks, addToCompletedTasks } = useContext(TaskContext);
 
-  console.log("Hola TaskList")
-  console.log(tasks.allTasks)
-
   return (
     <div>
       {
@@ -17,7 +14,7 @@ export default function TaskList() {
       }
       <hr />
       {
-        tasks.activeTasks.length > 0 && tasks.activeTasks.map(task => {
+        tasks.activeTasks.map(task => {
           return <TaskCard key={task} data={task} />
         })
       }

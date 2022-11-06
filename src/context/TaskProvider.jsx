@@ -15,10 +15,15 @@ export default function TaskProvider({ children }) {
   }, [tasks])
 
   const addToAllTasks = (newTask) => {
-    setTasks({
-      ...tasks,
-      allTasks: [...tasks.allTasks, newTask]
-    })
+    if (tasks.allTasks.includes(newTask)) {
+      console.log("La tarea ya existe")
+    } else {
+      setTasks({
+        ...tasks,
+        allTasks: [...tasks.allTasks, newTask],
+        activeTasks: [...tasks.activeTasks, newTask]
+      })
+    }
   }
 
   const addToActiveTasks = (newActiveTask) => {
@@ -28,19 +33,51 @@ export default function TaskProvider({ children }) {
     })
   }
 
-  const addToCompletedTasks = (newCompletedTask) => {
+  const deleteToActiveTasks = (activeTask) => {
     setTasks({
       ...tasks,
-      completedTasks: [...tasks.completedTasks, newCompletedTask]
+      activeTasks: tasks.activeTasks.filter((task) => task !== activeTask)
     })
-    console.log(tasks.completedTasks)
+  }
+
+  const addToCompletedTasks = (newCompletedTask) => {
+    if (tasks.completedTasks.includes(newCompletedTask)) {
+      console.log("La tarea ya existe")
+    } else {
+      setTasks({
+        ...tasks,
+        activeTasks: tasks.activeTasks.filter((task) => task !== newCompletedTask),
+        completedTasks: [...tasks.completedTasks, newCompletedTask]
+      })
+    }
+
+    //console.log(tasks.completedTasks)
+  }
+
+
+  const deleteToCompletedTasks = (completedTask) => {
+    setTasks({
+      ...tasks,
+      activeTasks: [...tasks.activeTasks, completedTask],
+      completedTasks: tasks.completedTasks.filter((task) => task !== completedTask)
+    })
+  }
+
+  const deleteAllToCompletedTasks = () => {
+    setTasks({
+      ...tasks,
+      completedTasks: []
+    })
   }
 
   const data = {
     tasks,
     addToAllTasks,
     addToActiveTasks,
-    addToCompletedTasks
+    addToCompletedTasks,
+    deleteToCompletedTasks,
+    deleteAllToCompletedTasks,
+    deleteToActiveTasks
   }
 
   return (

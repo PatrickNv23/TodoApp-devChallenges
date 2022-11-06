@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from 'react'
+import { useEffect } from 'react';
 import { TaskContext } from '../context/TaskProvider.jsx'
 export default function () {
 
@@ -11,10 +12,9 @@ export default function () {
   //   addToActiveTasks(e.target.value);
   // }
 
-
   const handleSubmit = () => {
     addToAllTasks(inputRef.current.value)
-    addToActiveTasks(inputRef.current.value)
+    // addToActiveTasks(inputRef.current.value)
     console.log(inputRef.current.value)
     inputRef.current.value = "";
   }
