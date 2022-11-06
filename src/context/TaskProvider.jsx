@@ -4,80 +4,57 @@ export const TaskContext = createContext();
 
 export default function TaskProvider({ children }) {
 
-  const [tasks, setTasks] = useState({
-    allTasks: [],
-    activeTasks: [],
-    completedTasks: []
-  });
+  const [tasks, setTasks] = useState([]);
 
-  useEffect(() => {
-    console.log("render provider")
-  }, [tasks])
 
-  const addToAllTasks = (newTask) => {
-    if (tasks.allTasks.includes(newTask)) {
+  const addToTasks = (newTask) => {
+    let auxiliaryTask = tasks.find((task) => task.description === newTask);
+    if (tasks.includes(auxiliaryTask)) {
       console.log("La tarea ya existe")
     } else {
-      setTasks({
+      setTasks([
         ...tasks,
-        allTasks: [...tasks.allTasks, newTask],
-        activeTasks: [...tasks.activeTasks, newTask]
-      })
+        {
+          description: newTask,
+          isCompleted: false
+        }
+      ])
     }
   }
 
-  const addToActiveTasks = (newActiveTask) => {
-    setTasks({
-      ...tasks,
-      activeTasks: [...tasks.activeTasks, newActiveTask]
+  const addToCompletedTasks = (completedTask) => {
+    const newTasks = tasks.map((task) => {
+      if (task.description === completedTask) {
+        return {
+          ...task,
+          isCompleted: true
+        }
+      }
+      return task
     })
+    setTasks(newTasks)
   }
 
-  const deleteToActiveTasks = (activeTask) => {
-    setTasks({
-      ...tasks,
-      activeTasks: tasks.activeTasks.filter((task) => task !== activeTask)
+
+  const addToActiveTasks = (activeTask) => {
+    const newTasks = tasks.map((task) => {
+      if (task.description === activeTask) {
+        return {
+          ...task,
+          isCompleted: false
+        }
+      }
+      return task
     })
+    setTasks(newTasks)
   }
 
-  const addToCompletedTasks = (newCompletedTask) => {
-    if (tasks.completedTasks.includes(newCompletedTask)) {
-      console.log("La tarea ya existe")
-    } else {
-      setTasks({
-        ...tasks,
-        activeTasks: tasks.activeTasks.filter((task) => task !== newCompletedTask),
-        completedTasks: [...tasks.completedTasks, newCompletedTask]
-      })
-    }
-
-    //console.log(tasks.completedTasks)
-  }
-
-
-  const deleteToCompletedTasks = (completedTask) => {
-    setTasks({
-      ...tasks,
-      activeTasks: [...tasks.activeTasks, completedTask],
-      completedTasks: tasks.completedTasks.filter((task) => task !== completedTask)
-    })
-  }
-
-  const deleteAllToCompletedTasks = () => {
-    setTasks({
-      ...tasks,
-      completedTasks: []
-    })
-  }
 
   const data = {
     tasks,
-    addToAllTasks,
+    addToTasks,
     addToActiveTasks,
     addToCompletedTasks,
-    deleteToCompletedTasks,
-    deleteAllToCompletedTasks,
-    deleteToActiveTasks
   }
 
   return (
