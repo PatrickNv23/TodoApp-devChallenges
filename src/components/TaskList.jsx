@@ -1,32 +1,58 @@
 import React, { useContext } from 'react'
 import { TaskContext } from '../context/TaskProvider'
 import TaskCard from './TaskCard';
-export default function TaskList() {
-  const { tasks } = useContext(TaskContext);
+import styles from '../css_modules/TaskList.module.css';
+export default function TaskList({ filterName }) {
+
+
+  const { tasks, deleteAllTasks } = useContext(TaskContext);
+
+  const handleButtonDeleteAllTasks = () => {
+    if (filterName === "Completed" && tasks.length > 0) {
+      return <div className={styles.containerButtonDeleteAllTasks}>
+        <button onClick={() => deleteAllTasks()} className={styles.buttonDeleteAllTasks}>
+          <span style={{ fontSize: "15px" }} className="material-icons-outlined">
+            delete
+          </span>
+          <span className={styles.textButtonDeleteAll}>
+            delete all
+          </span>
+        </button>
+      </div>
+    }
+  }
 
   return (
-    <div>
+    <div className={styles.containerTaskList}>
       {
-        tasks.length > 0 && tasks.map((task) => {
-          return <TaskCard key={task.description} data={task} />
+        filterName === "All" && tasks.map((task) => {
+          return <div key={task.description}>
+            <TaskCard data={task} />
+          </div>
         })
       }
-      <hr />
       {
-        tasks.map((task) => {
+        filterName === "Active" && tasks.map((task) => {
           if (!task.isCompleted) {
-            return <TaskCard key={task.description} data={task} />
+            return <div key={task.description}>
+              <TaskCard data={task} />
+            </div>
           }
         })
       }
-      <hr />
       {
-        tasks.map((task) => {
+        filterName === "Completed" && tasks.map((task) => {
           if (task.isCompleted) {
-            return <TaskCard key={task.description} data={task} />
+            return <div key={task.description} >
+              <TaskCard data={task} />
+            </div>
           }
         })
       }
-    </div>
+
+      {
+        handleButtonDeleteAllTasks()
+      }
+    </div >
   )
 }

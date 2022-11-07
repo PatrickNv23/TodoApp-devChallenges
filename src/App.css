@@ -1,0 +1,29 @@
+.title {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  padding-top: 32px;
+}
+
+.containerFiltersTaskHeader {
+  width: 100%;
+  min-height: auto;
+  height: 80px;
+  max-height: 80px;
+  margin-top: 20px;
+  /* background-color: aquamarine; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #BDBDBD;
+}
+
+.containerSearch {
+  min-height: auto;
+  height: 56px;
+  max-height: 56px;
+  width: 100%;
+  /* background-color: bisque; */
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+}

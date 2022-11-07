@@ -1,0 +1,40 @@
+.containerTaskList {
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  justify-content: flex-start;
+}
+
+.containerButtonDeleteAllTasks {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+
+.buttonDeleteAllTasks {
+  width: 124px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background: #EB5757;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+}
+
+.textButtonDeleteAll {
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  padding-left: 5.5px;
+}

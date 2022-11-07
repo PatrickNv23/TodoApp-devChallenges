@@ -1,0 +1,33 @@
+.containerFilterTaskHeader {
+  height: 100%;
+  width: 89px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.filterName {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #333333;
+  padding-top: 40px;
+  cursor: pointer;
+}
+
+
+.selectedFilter {
+  width: 100%;
+  border: none;
+  border-radius: 4px 4px 0px 0px;
+  border: 2px solid #2F80ED;
+}
+
+/* 
+.containerFilterTaskHeader:hover,
+.containerFilterTaskHeader:focus {
+  border-bottom: 3px solid #2F80ED;
+} */
