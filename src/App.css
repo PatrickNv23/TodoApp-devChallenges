@@ -10,7 +10,6 @@
   height: 80px;
   max-height: 80px;
   margin-top: 20px;
-  /* background-color: aquamarine; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -22,7 +21,6 @@
   height: 56px;
   max-height: 56px;
   width: 100%;
-  /* background-color: bisque; */
   margin-top: 18px;
   display: flex;
   justify-content: space-between;

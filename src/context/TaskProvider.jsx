@@ -1,11 +1,14 @@
 import React, { createContext, useState } from 'react'
-
+import useLocalStorage from '../hooks/useLocalStorage.jsx';
 export const TaskContext = createContext();
 
 export default function TaskProvider({ children }) {
 
   const [tasks, setTasks] = useState([]);
   const [filterName, setFilterName] = useState("All");
+
+
+  useLocalStorage(tasks, setTasks)
 
   const getFilterNameForTasks = (newFilterName) => {
     setFilterName(newFilterName)
@@ -14,7 +17,7 @@ export default function TaskProvider({ children }) {
   const addToTasks = (newTask) => {
     let auxiliaryTask = tasks.find((task) => task.description === newTask);
     if (tasks.includes(auxiliaryTask) || newTask === "" || newTask.trim() === "") {
-      console.log("La tarea ya existe")
+      window.alert("La tarea ya existe o no es correcta")
     } else {
       setTasks([
         ...tasks,

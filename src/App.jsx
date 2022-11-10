@@ -3,7 +3,6 @@ import FilterTaskHeader from './components/FilterTaskHeader';
 import Search from './components/Search.jsx';
 import TaskList from './components/TaskList.jsx';
 import Footer from './components/Footer.jsx';
-
 import { useContext } from 'react';
 import { TaskContext } from './context/TaskProvider';
 
