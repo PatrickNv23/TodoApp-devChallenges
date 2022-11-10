@@ -40,14 +40,14 @@
 ![screenshot](https://raw.githubusercontent.com/PatrickNv23/TodoApp-devChallenges/main/public/todoapp_completed.png)
 ![screenshot](https://raw.githubusercontent.com/PatrickNv23/TodoApp-devChallenges/main/public/todoapp_responsive.png)
 
-- Where can I see your demo?
+- Where can I see your demo?  
   This frontend challenge was uploaded to the Netlify domains, because it is a very powerful service to upload your React projects to the internet.
 
-- What was your experience?
- My experience at the end of this challenge has been satisfactory, because it made me review concepts that I had forgotten, it also helped me reinforce my knowledge of React such as React Context, state management, etc.
- Lastly, I reinforced my knowledge of CSS flexbox by using CSS modules and adapting the app to different mobile devices.
+- What was your experience?  
+  My experience at the end of this challenge has been satisfactory, because it made me review concepts that I had forgotten, it also helped me reinforce my knowledge of React such as React Context, state management, etc.  
+  Lastly, I reinforced my knowledge of CSS flexbox by using CSS modules and adapting the app to different mobile devices.
 
-- What have you learned/improved?
+- What have you learned/improved?  
   I had to go over the concepts of the CSS modules and decide the best way to update the tasks depending on the filter the user selects.
 
 ### Built With
