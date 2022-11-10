@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://patricknv23windbnb.netlify.app">
+    <a href="https://todoappnv.netlify.app/">
       Demo
     </a>
     <span> | </span>
@@ -35,10 +35,10 @@
 
 ## Overview
 
-![screenshot](https://raw.githubusercontent.com/PatrickNv23/Windbnb-devChallenge/main/src/assets/windbnb-1.png)
-![screenshot](https://raw.githubusercontent.com/PatrickNv23/Windbnb-devChallenge/main/src/assets/windbnb-2.png)
-![screenshot](https://raw.githubusercontent.com/PatrickNv23/Windbnb-devChallenge/main/src/assets/windbnb-3.png)
-![screenshot](https://raw.githubusercontent.com/PatrickNv23/Windbnb-devChallenge/main/src/assets/windbnb-4.png)
+![screenshot](https://raw.githubusercontent.com/PatrickNv23/TodoApp-devChallenges/main/public/todoapp_all.png)
+![screenshot](https://raw.githubusercontent.com/PatrickNv23/TodoApp-devChallenges/main/public/todoapp_active.png)
+![screenshot](https://raw.githubusercontent.com/PatrickNv23/TodoApp-devChallenges/main/public/todoapp_completed.png)
+![screenshot](https://raw.githubusercontent.com/PatrickNv23/TodoApp-devChallenges/main/public/todoapp_responsive.png)
 
 - Where can I see your demo?
   This frontend challenge was uploaded to the Netlify domains, because it is a very powerful service to upload your React projects to the internet.
